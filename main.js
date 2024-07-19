@@ -1,4 +1,5 @@
 const listaBtn = document.querySelectorAll('button');
+let teclasPressionadas = {};
 
 for (let i = 0; i < listaBtn.length; i++) {
     listaBtn[i].onclick = function(){
@@ -9,13 +10,16 @@ for (let i = 0; i < listaBtn.length; i++) {
 }
 
 window.onkeydown = function(event){
+    if(teclasPressionadas[event.key])
+        return;
     for (let i = 0; i < listaBtn.length; i++) {
         if(listaBtn[i].classList[2] == event.key){
             listaBtn[i].onclick();
             listaBtn[i].classList.add('ativa');
-            teclaPressionada = event.key;
         }
     }
+    teclasPressionadas[event.key] = true;
+    console.log(teclasPressionadas);
 }
 
 window.onkeyup = function(event){
@@ -24,4 +28,5 @@ window.onkeyup = function(event){
             listaBtn[i].classList.remove('ativa');
         }
     }
+    teclasPressionadas[event.key] = false;
 }
