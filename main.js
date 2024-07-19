@@ -9,9 +9,18 @@ for (let i = 0; i < listaBtn.length; i++) {
 }
 
 window.onkeydown = function(event){
-    console.log(`Pressionou a tecla ${event.key}`);
+    for (let i = 0; i < listaBtn.length; i++) {
+        if(listaBtn[i].classList[2] == event.key){
+            listaBtn[i].onclick();
+            listaBtn[i].classList.add('ativa');
+        }
+    }
 };
 
 window.onkeyup = function(event){
-    console.log(`Soltou a tecla ${event.key}`);
+    for (let i = 0; i < listaBtn.length; i++) {
+        if(listaBtn[i].classList[2] == event.key){
+            listaBtn[i].classList.remove('ativa');
+        }
+    }
 };
