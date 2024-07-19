@@ -13,6 +13,7 @@ window.onkeydown = function(event){
         if(listaBtn[i].classList[2] == event.key){
             listaBtn[i].onclick();
             listaBtn[i].classList.add('ativa');
+            teclaPressionada = event.key;
         }
     }
 };
