@@ -1,13 +1,17 @@
-let listaBtn = document.querySelectorAll('button');
-let listaAudios = document.querySelectorAll('audio');
+const listaBtn = document.querySelectorAll('button');
 
-let modelo = {};
 for (let i = 0; i < listaBtn.length; i++) {
-    modelo[listaBtn[i].innerHTML] = listaAudios[i];
+    listaBtn[i].onclick = function(){
+        let idAudio = `#som_${listaBtn[i].classList[1]}`;
+        document.querySelector(idAudio).currentTime = 0;
+        document.querySelector(idAudio).play();
+    };
 }
 
+window.onkeydown = function(event){
+    console.log(`Pressionou a tecla ${event.key}`);
+};
 
-window.onclick = function(event){
-    if(event.target.localName == 'button')
-        modelo[event.target.innerHTML].play();
-}
+window.onkeyup = function(event){
+    console.log(`Soltou a tecla ${event.key}`);
+};
