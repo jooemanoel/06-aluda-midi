@@ -16,7 +16,7 @@ window.onkeydown = function(event){
             teclaPressionada = event.key;
         }
     }
-};
+}
 
 window.onkeyup = function(event){
     for (let i = 0; i < listaBtn.length; i++) {
@@ -24,4 +24,4 @@ window.onkeyup = function(event){
             listaBtn[i].classList.remove('ativa');
         }
     }
-};
+}
