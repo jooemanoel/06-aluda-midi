@@ -19,7 +19,6 @@ window.onkeydown = function(event){
         }
     }
     teclasPressionadas[event.key] = true;
-    console.log(teclasPressionadas);
 }
 
 window.onkeyup = function(event){
